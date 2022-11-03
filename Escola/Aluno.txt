@@ -1,0 +1,6 @@
+1;5.4;Erick;485684488;02/15/16;masculino;933689584;tony@gmail.com;rua mendoça;488;Quimica
+2;5.4;Erick;485684488;02/15/16;masculino;933689584;tony@gmail.com;rua mendoça;488;Quimica
+3;5.4;Erick;485684488;02/15/16;masculino;933689584;tony@gmail.com;rua mendoça;488;Quimica
+4;5.4;Erick;485684488;02/15/16;masculino;933689584;tony@gmail.com;rua mendoça;488;Quimica
+5;5.4;Erick;485684488;02/15/16;masculino;933689584;tony@gmail.com;rua mendoça;488;Quimica
+7;5.4;Erick;485684488;02/15/16;masculino;933689584;tony@gmail.com;rua mendoça;488;Quimica

@@ -1,0 +1,4 @@
+1;Anthony Mukskdkdkdkkdkdkdito foda;386420154;02/06/2002;Masculino;933689547;anthony.Eusoufoda@PRacaralho.com;Barramas;487;TI;100184.0
+2;Olga;1;02/06/2022;M;933689584;anthony.richard2314@gmail.com;Rua Da paz;73;Matematica;4878.45
+3;dani;2;02/06/2022;M;933689584;anthony.richard2314@gmail.com;Rua Da paz;73;Matematica;4878.45
+4;wALL;3;02/06/2022;M;933689584;anthony.richard2314@gmail.com;Rua Da paz;73;Matematica;4878.45

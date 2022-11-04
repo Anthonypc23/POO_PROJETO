@@ -212,10 +212,10 @@ public class Pesquisa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        List<String[]> lista = controllerProfessor.Listar(); 
+        List<String[]> lista = controllerProfessor.Listar();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
-        
+
         for (String[] Professores : lista) {
             model.addRow(Professores);
         }
@@ -232,7 +232,11 @@ public class Pesquisa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        
+        // model.get
+
+        controllerProfessor.remover(WIDTH);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     /**

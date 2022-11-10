@@ -10,11 +10,11 @@ import java.util.Date;
  *
  * @author rrmat
  */
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa implements Comparable<Aluno>{
     private int id;
     private double Nota;
 
-    public Aluno(int id, double Nota, String nome, int CPF, String nacimento, String Sex, int Celular, String email, String Endereço, int NumCasa, String Diciplina) {
+    public Aluno(int id, double Nota, String nome, String CPF, String nacimento, String Sex, String Celular, String email, String Endereço, int NumCasa, String Diciplina) {
         super(nome, CPF, nacimento, Sex, Celular, email, Endereço, NumCasa, Diciplina);
         this.id = id;
         this.Nota = Nota;
@@ -48,6 +48,17 @@ public class Aluno extends Pessoa{
     @Override
     public String toString() {
         return id + ";" + Nota + ";"+super.toString();
+    }
+
+    @Override
+    public int compareTo(Aluno aluno) {
+        if(this.getId() < aluno.getNota()){
+            return -1;
+        }
+        if(this.getId() > aluno.getNota()){
+            return 1;
+        }
+     return 0;
     }
     
     

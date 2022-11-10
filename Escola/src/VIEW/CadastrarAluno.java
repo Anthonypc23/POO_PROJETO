@@ -4,6 +4,9 @@
  */
 package VIEW;
 
+import CONTROLLER.controllerAluno;
+import MODEL.Aluno;
+
 /**
  *
  * @author RENATO LIMA
@@ -34,14 +37,13 @@ public class CadastrarAluno extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         txtNomeRua = new javax.swing.JTextField();
         txtNumRua = new javax.swing.JTextField();
-        checkboxF = new javax.swing.JCheckBox();
-        checkboxM = new javax.swing.JCheckBox();
-        comboboxMateria = new javax.swing.JComboBox<>();
+        cbMateria = new javax.swing.JComboBox<>();
         btnCancelar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         txtCPF = new javax.swing.JFormattedTextField();
         txtDataNascimento = new javax.swing.JFormattedTextField();
         txtCelular = new javax.swing.JFormattedTextField();
+        cbSEX = new javax.swing.JComboBox<>();
         lblCPF = new javax.swing.JLabel();
         lblDataNascimento = new javax.swing.JLabel();
         lblCelular = new javax.swing.JLabel();
@@ -79,15 +81,9 @@ public class CadastrarAluno extends javax.swing.JFrame {
 
         txtNumRua.setBackground(new java.awt.Color(255, 255, 255));
 
-        checkboxF.setForeground(new java.awt.Color(0, 102, 102));
-        checkboxF.setText("F");
-
-        checkboxM.setForeground(new java.awt.Color(0, 102, 102));
-        checkboxM.setText("M");
-
-        comboboxMateria.setBackground(new java.awt.Color(255, 255, 255));
-        comboboxMateria.setForeground(new java.awt.Color(0, 102, 102));
-        comboboxMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Português", "Matematica", "Historia", "Geografia", "Ciencias", "Inglês", "Artes", "ED. Fisica" }));
+        cbMateria.setBackground(new java.awt.Color(255, 255, 255));
+        cbMateria.setForeground(new java.awt.Color(0, 102, 102));
+        cbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Português", "Matematica", "Historia", "Geografia", "Ciencias", "Inglês", "Artes", "ED. Fisica" }));
 
         btnCancelar.setBackground(new java.awt.Color(0, 102, 102));
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,6 +126,10 @@ public class CadastrarAluno extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        cbSEX.setBackground(new java.awt.Color(255, 255, 255));
+        cbSEX.setForeground(new java.awt.Color(0, 102, 102));
+        cbSEX.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Masculino ", "Feminino", "Outro" }));
+
         javax.swing.GroupLayout panelTXTLayout = new javax.swing.GroupLayout(panelTXT);
         panelTXT.setLayout(panelTXTLayout);
         panelTXTLayout.setHorizontalGroup(
@@ -143,22 +143,19 @@ public class CadastrarAluno extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtNumRua, javax.swing.GroupLayout.PREFERRED_SIZE, 59, Short.MAX_VALUE))
                     .addGroup(panelTXTLayout.createSequentialGroup()
-                        .addComponent(comboboxMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 233, Short.MAX_VALUE))
-                    .addGroup(panelTXTLayout.createSequentialGroup()
                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelTXTLayout.createSequentialGroup()
-                        .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(checkboxF)
-                        .addGap(31, 31, 31)
-                        .addComponent(checkboxM)
-                        .addContainerGap())
                     .addComponent(txtCPF)
                     .addComponent(txtCelular)
-                    .addComponent(txtNome)))
+                    .addComponent(txtNome)
+                    .addGroup(panelTXTLayout.createSequentialGroup()
+                        .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbSEX, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelTXTLayout.createSequentialGroup()
+                        .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelTXTLayout.setVerticalGroup(
             panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,9 +166,8 @@ public class CadastrarAluno extends javax.swing.JFrame {
                 .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(checkboxF)
-                    .addComponent(checkboxM)
-                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbSEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -180,9 +176,9 @@ public class CadastrarAluno extends javax.swing.JFrame {
                 .addGroup(panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNomeRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(comboboxMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                 .addGroup(panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -267,7 +263,7 @@ public class CadastrarAluno extends javax.swing.JFrame {
                 .addComponent(lblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(btnBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addComponent(panelTXT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -312,6 +308,21 @@ public class CadastrarAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+        CadastrarProfessor pf = new CadastrarProfessor();
+        CONTROLLER.controllerAluno.Casdrastra(new Aluno(
+                controllerAluno.LastID(),
+                0,
+                txtNome.getText(),
+                txtCPF.getText(),
+                txtDataNascimento.getText(),
+                cbSEX.getSelectedItem().toString(),
+                txtCelular.getText(),
+                txtEmail.getText(),
+                txtNomeRua.getText(),
+                Integer.parseInt(txtNumRua.getText()),
+                cbMateria.getSelectedItem().toString()
+                )); 
         Home objNewProduct = new Home();
         objNewProduct.setVisible(true);
         this.dispose();
@@ -393,9 +404,8 @@ public class CadastrarAluno extends javax.swing.JFrame {
     private javax.swing.JButton btnBotao;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JCheckBox checkboxF;
-    private javax.swing.JCheckBox checkboxM;
-    private javax.swing.JComboBox<String> comboboxMateria;
+    private javax.swing.JComboBox<String> cbMateria;
+    private javax.swing.JComboBox<String> cbSEX;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAluno;
     private javax.swing.JLabel lblCPF;

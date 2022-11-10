@@ -4,8 +4,10 @@
  */
 package VIEW;
 
+import CONTROLLER.controllerAluno;
 import CONTROLLER.controllerProfessor;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -41,6 +43,8 @@ public class Pesquisa extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        cbPessoa = new javax.swing.JComboBox<>();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -62,7 +66,7 @@ public class Pesquisa extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "CPF", "Nascimento", "Sexo", "Celular", "Email", "Logradouro", "N°", "Disciplina", "Salario"
+                "ID", "Nome", "CPF", "Nascimento", "Sexo", "Celular", "Email", "Logradouro", "N°", "Disciplina", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -135,7 +139,6 @@ public class Pesquisa extends javax.swing.JFrame {
         jButton7.setBackground(new java.awt.Color(0, 102, 102));
         jButton7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Editar");
         jButton7.setBorder(null);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,23 +157,47 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
 
+        cbPessoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Professor", "Aluno" }));
+
+        jButton9.setBackground(new java.awt.Color(0, 102, 102));
+        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Ordenar");
+        jButton9.setBorder(null);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cbPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                        .addGap(22, 22, 22))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(4, 4, 4)
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                                        .addGap(22, 22, 22)))
+                                .addGap(4, 4, 4))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -178,13 +205,17 @@ public class Pesquisa extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addGap(60, 60, 60)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(cbPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -212,13 +243,32 @@ public class Pesquisa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        List<String[]> lista = controllerProfessor.Listar();
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
 
-        for (String[] Professores : lista) {
-            model.addRow(Professores);
+        if (cbPessoa.getSelectedItem().toString().equals("Professor")) {
+            jTable1.getColumnModel().getColumn(10).setHeaderValue("Salario");
+            jTable1.getTableHeader().resizeAndRepaint();
+            List<String[]> lista = controllerProfessor.Listar();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            for (String[] Professores : lista) {
+                model.addRow(Professores);
+            }
+            jButton7.setText("Dar Aumento");
+        } else if (cbPessoa.getSelectedItem().toString().equals("Aluno")) {
+            jTable1.getColumnModel().getColumn(10).setHeaderValue("Nota");
+            jTable1.getTableHeader().resizeAndRepaint();
+            List<String[]> lista = controllerAluno.Listar();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            for (String[] Professores : lista) {
+                model.addRow(Professores);
+            }
+            jButton7.setText("Dar Nota");
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um tipo de pesquisa", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
+
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -228,16 +278,97 @@ public class Pesquisa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+           int index = -1;
+            index = jTable1.getSelectedRow();
+            controllerAluno al = new controllerAluno();
+            controllerProfessor pf = new controllerProfessor();
+            
+            if (index >= 0) {
+                
+            
+          if (cbPessoa.getSelectedItem().toString().equals("Professor")) {
+              
+            List<String[]> lista = pf.Somarvalor(index);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            for (String[] Professores : lista) {
+                model.addRow(Professores);
+            }
+            jButton7.setText("Dar Aumento");
+        } else if (cbPessoa.getSelectedItem().toString().equals("Aluno")) {
+            List<String[]> lista = al.Somarvalor(index);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            for (String[] Professores : lista) {
+                model.addRow(Professores);
+            }
+            jButton7.setText("Dar Nota");
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um tipo de pesquisa", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+                JOptionPane.showMessageDialog(this, "Voçê não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
+            } 
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        
-        // model.get
+        if (cbPessoa.getSelectedItem().toString().equals("Professor")) {
+            int index = -1;
+            index = jTable1.getSelectedRow();
+            if (index >= 0) {
+                controllerProfessor.remover(index);
+                List<String[]> lista = controllerProfessor.Listar();
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                model.setRowCount(0);
 
-        controllerProfessor.remover(WIDTH);
+                for (String[] Professores : lista) {
+                    model.addRow(Professores);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Voçê não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
+            }
+        } else if (cbPessoa.getSelectedItem().toString().equals("Aluno")) {
+            int index = -1;
+            index = jTable1.getSelectedRow();
+            if (index >= 0) {
+                controllerAluno.remover(index);
+                List<String[]> lista = controllerAluno.Listar();
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                model.setRowCount(0);
+
+                for (String[] Professores : lista) {
+                    model.addRow(Professores);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Voçê não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um tipo de pesquisa", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        if (cbPessoa.getSelectedItem().toString().equals("Professor")) {
+          List<String[]> lista = controllerProfessor.ordenar();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            for (String[] Professores : lista) {
+                model.addRow(Professores);
+            }
+        } else if (cbPessoa.getSelectedItem().toString().equals("Aluno")) {
+         List<String[]> lista = controllerAluno.ordenar();
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            model.setRowCount(0);
+            for (String[] Professores : lista) {
+                model.addRow(Professores);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecione um tipo de pesquisa", "ERRO", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -530,10 +661,12 @@ public class Pesquisa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbPessoa;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

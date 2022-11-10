@@ -13,16 +13,16 @@ import java.util.Date;
  */
 public class Pessoa {
     protected String nome;
-    protected long CPF;
+    protected String CPF;
     protected String nacimento;
     protected String Sex;
-    protected int Celular;
+    protected String Celular;
     protected String email;
     protected String Endereco;
     protected int NumCasa;
     protected String Diciplina;
 
-    public Pessoa(String nome, long CPF, String nacimento, String Sex, int Celular, String email, String Endereco, int NumCasa, String Diciplina) {
+    public Pessoa(String nome, String CPF, String nacimento, String Sex, String Celular, String email, String Endereco, int NumCasa, String Diciplina) {
         this.nome = nome;
         this.CPF = CPF;
         this.nacimento = nacimento;
@@ -45,11 +45,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public long getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(long CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
@@ -69,11 +69,11 @@ public class Pessoa {
         this.Sex = Sex;
     }
 
-    public int getCelular() {
+    public String getCelular() {
         return Celular;
     }
 
-    public void setCelular(int Celular) {
+    public void setCelular(String Celular) {
         this.Celular = Celular;
     }
 

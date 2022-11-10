@@ -12,16 +12,18 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Box;
+import utils.Escola;
 
 /**
  *
  * @author rrmat
  */
-public class controllerProfessor {
+public class controllerProfessor implements Escola{
 
     private static FileWriter fw;
     private static BufferedWriter bw;
@@ -31,17 +33,17 @@ public class controllerProfessor {
     private static List<Professor> pList = new ArrayList<Professor>();
 
     public static void Casdrastra(Professor pf) {
-            int last= 0,id=0;
+        int last = 0, id = 0;
         try {
             pList = Read();
-            
+
             fw = new FileWriter(arquivo);
             bw = new BufferedWriter(fw);
             for (Professor professor : pList) {
                 bw.write(professor.toString());
                 bw.newLine();
             }
-            
+
             bw.write(pf.toString());
             bw.close();
             fw.close();
@@ -49,11 +51,12 @@ public class controllerProfessor {
             System.out.println("Error" + ex.getMessage());
         }
     }
-     
-    public static int LastID(){
-     pList = Read();
-        return pList.size()+1;
+
+    public static int LastID() {
+        pList = Read();
+        return pList.size() + 1;
     }
+
     public static List Read() {
         try {
             pList.clear();
@@ -65,10 +68,10 @@ public class controllerProfessor {
                 String[] v = line.split(";");
                 p.setIDP(Integer.parseInt(v[0]));
                 p.setNome(v[1]);
-                p.setCPF(Long.parseLong(v[2]));
+                p.setCPF(v[2]);
                 p.setNacimento(v[3]);
                 p.setSex(v[4]);
-                p.setCelular(Integer.parseInt(v[5]));
+                p.setCelular(v[5]);
                 p.setEmail(v[6]);
                 p.setEndereco(v[7]);
                 p.setNumCasa(Integer.parseInt(v[8]));
@@ -80,7 +83,6 @@ public class controllerProfessor {
             fr.close();
             br.close();
 
-
         } catch (IOException ex) {
             System.out.println("Error" + ex.getMessage());
         }
@@ -90,9 +92,9 @@ public class controllerProfessor {
     public static void remover(int id) {
         pList = Read();
         pList.remove(id);
-        
+
         try {
-           fw = new FileWriter(arquivo);
+            fw = new FileWriter(arquivo);
             bw = new BufferedWriter(fw);
             for (Professor professor : pList) {
                 bw.write(professor.toString());
@@ -100,11 +102,11 @@ public class controllerProfessor {
             }
             bw.close();
             fw.close();
-            
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
 
     public static void Empty() {
@@ -118,12 +120,12 @@ public class controllerProfessor {
             Logger.getLogger(controllerProfessor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static List<String[]> Listar(){
-        List<String[]> lista = new ArrayList<>();        
+
+    public static List<String[]> Listar() {
+        List<String[]> lista = new ArrayList<>();
         pList = Read();
-        for (Professor prof :pList ) {
-            lista.add(new String[]{String.valueOf(prof.getIDP()),prof.getNome(),String.valueOf(prof.getCPF()),prof.getNacimento(),prof.getSex(),String.valueOf(prof.getCelular()),prof.getEmail(),prof.getEndereco(),String.valueOf(prof.getNumCasa()),prof.getDiciplina(),String.valueOf(prof.getSalario())});
+        for (Professor prof : pList) {
+            lista.add(new String[]{String.valueOf(prof.getIDP()), prof.getNome(), prof.getCPF(), prof.getNacimento(), prof.getSex(), prof.getCelular(), prof.getEmail(), prof.getEndereco(), String.valueOf(prof.getNumCasa()), prof.getDiciplina(), String.valueOf(prof.getSalario())});
         }
         return lista;
     }
@@ -132,6 +134,41 @@ public class controllerProfessor {
         for (Professor professor : pList) {
             System.out.println(professor.toString());
         }
+    }
+
+    public static List<String[]> ordenar() {
+        pList = Read();
+        Collections.sort(pList);
+        List<String[]> lista = new ArrayList<>();
+        for (Professor prof : pList) {
+            lista.add(new String[]{String.valueOf(prof.getIDP()), prof.getNome(), prof.getCPF(), prof.getNacimento(), prof.getSex(), prof.getCelular(), prof.getEmail(), prof.getEndereco(), String.valueOf(prof.getNumCasa()), prof.getDiciplina(), String.valueOf(prof.getSalario())});
+        }
+        return lista;
+    }
+    
+    
+    @Override
+    public List<String[]> Somarvalor(int index) {
+        Professor pf;
+        pList = Read();
+        pf = pList.get(index);
+        pf.setSalario((pf.getSalario()*0.2)+pf.getSalario());
+
+        try {
+            fw = new FileWriter(arquivo);
+            bw = new BufferedWriter(fw);
+             for (Professor professor : pList) {
+                bw.write(professor.toString());
+                bw.newLine();
+            }
+             bw.close();
+             fw.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(controllerAluno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return Listar();
     }
 
 }

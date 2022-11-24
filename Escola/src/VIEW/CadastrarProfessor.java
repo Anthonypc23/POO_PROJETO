@@ -91,7 +91,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
 
         cbMateria.setBackground(new java.awt.Color(255, 255, 255));
         cbMateria.setForeground(new java.awt.Color(0, 102, 102));
-        cbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Português", "Matematica", "Historia", "Geografia", "Ciencias", "Inglês", "Artes", "ED. Fisica" }));
+        cbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Português", "Matematica", "Historia", "Geografia", "Ciencias", "Inglês", "Artes", "ED. Fisica" }));
 
         btnCancelar.setBackground(new java.awt.Color(0, 102, 102));
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));

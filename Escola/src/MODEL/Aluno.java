@@ -40,7 +40,7 @@ public class Aluno extends Pessoa implements Comparable<Aluno> {
 
     @Override
     public String toString() {
-        return id + ";" + Nota + ";" + super.toString();
+        return super.toString()+";"+Nota;
     }
 
     @Override

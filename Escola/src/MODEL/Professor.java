@@ -21,10 +21,13 @@ public class Professor extends Pessoa implements Comparable<Professor>{
         this.Salario = Salario;
     }
 
-   
-    public Professor(long IDP, double Salario) {
-        this.Salario = Salario;
+    @Override
+    public String toString() {
+        return super.toString()+";"+Salario;
     }
+
+    
+   
     public double getSalario() {
         return Salario;
     }

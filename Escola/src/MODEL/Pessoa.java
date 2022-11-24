@@ -123,7 +123,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return nome +";"+ CPF +";"+ nacimento +";"+ Sex +";"+ Celular +";"+ email +";"+ Endereco + ";"+ NumCasa +";"+ Diciplina;
+        return id+";"+ nome +";"+ CPF +";"+ nacimento +";"+ Sex +";"+ Celular +";"+ email +";"+ Endereco + ";"+ NumCasa +";"+ Diciplina;
     }
     
 }

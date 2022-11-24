@@ -65,16 +65,16 @@ public class controllerAluno implements Escola {
                 Aluno a = new Aluno();
                 String[] v = line.split(";");
                 a.setId(Integer.parseInt(v[0]));
-                a.setNota(Double.parseDouble(v[1]));
-                a.setNome(v[2]);
-                a.setCPF(v[3]);
-                a.setNacimento(v[4]);
-                a.setSex(v[5]);
-                a.setCelular(v[6]);
-                a.setEmail(v[7]);
-                a.setEndereco(v[8]);
-                a.setNumCasa(Integer.parseInt(v[9]));
-                a.setDiciplina(v[10]);
+                a.setNome(v[1]);
+                a.setCPF(v[2]);
+                a.setNacimento(v[3]);
+                a.setSex(v[4]);
+                a.setCelular(v[5]);
+                a.setEmail(v[6]);
+                a.setEndereco(v[7]);
+                a.setNumCasa(Integer.parseInt(v[8]));
+                a.setDiciplina(v[9]);
+                a.setNota(Double.parseDouble(v[10]));
                 pList.add(a);
                 line = br.readLine();
             }

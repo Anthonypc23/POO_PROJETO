@@ -7,17 +7,13 @@ package VIEW;
 import CONTROLLER.controllerProfessor;
 import MODEL.Professor;
 import javax.swing.JOptionPane;
+import utils.Check;
 
 /**
  *
  * @author RENATO LIMA
  */
 public class CadastrarProfessor extends javax.swing.JFrame {
-    
-    
-    
-    
-
 
     /**
      * Creates new form NewProduct
@@ -58,7 +54,6 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         lblEmail = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
-        btnBotao = new javax.swing.JButton();
         lblMateria = new javax.swing.JLabel();
         lblEndereco1 = new javax.swing.JLabel();
 
@@ -78,8 +73,10 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         panelTXT.setBackground(new java.awt.Color(255, 255, 255));
 
         txtNome.setBackground(new java.awt.Color(255, 255, 255));
+        txtNome.setName("Nome"); // NOI18N
 
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmail.setName("Email"); // NOI18N
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -87,8 +84,10 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         });
 
         txtNomeRua.setBackground(new java.awt.Color(255, 255, 255));
+        txtNomeRua.setName("Endereço"); // NOI18N
 
         txtNumRua.setBackground(new java.awt.Color(255, 255, 255));
+        txtNumRua.setName("Numero da Casa"); // NOI18N
 
         cbMateria.setBackground(new java.awt.Color(255, 255, 255));
         cbMateria.setForeground(new java.awt.Color(0, 102, 102));
@@ -120,6 +119,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCPF.setName("CPF"); // NOI18N
 
         txtDataNascimento.setBackground(new java.awt.Color(255, 255, 255));
         try {
@@ -127,6 +127,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtDataNascimento.setName("Nascimento"); // NOI18N
 
         txtCelular.setBackground(new java.awt.Color(255, 255, 255));
         try {
@@ -134,6 +135,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCelular.setName("Celular"); // NOI18N
 
         cbSEX.setBackground(new java.awt.Color(255, 255, 255));
         cbSEX.setForeground(new java.awt.Color(0, 102, 102));
@@ -150,6 +152,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         });
 
         txtSalario.setBackground(new java.awt.Color(255, 255, 255));
+        txtSalario.setName("Salario"); // NOI18N
 
         javax.swing.GroupLayout panelTXTLayout = new javax.swing.GroupLayout(panelTXT);
         panelTXT.setLayout(panelTXTLayout);
@@ -205,7 +208,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
                 .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
                 .addGroup(panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -242,16 +245,6 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         lblNome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblNome.setText("Nome:");
 
-        btnBotao.setBackground(new java.awt.Color(0, 102, 102));
-        btnBotao.setForeground(new java.awt.Color(255, 255, 255));
-        btnBotao.setText("Botão");
-        btnBotao.setBorder(null);
-        btnBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBotaoActionPerformed(evt);
-            }
-        });
-
         lblMateria.setBackground(new java.awt.Color(255, 255, 255));
         lblMateria.setForeground(new java.awt.Color(255, 255, 255));
         lblMateria.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -271,7 +264,6 @@ public class CadastrarProfessor extends javax.swing.JFrame {
                     .addGroup(panelLBLLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panelLBLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblProfessor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblCPF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -307,9 +299,7 @@ public class CadastrarProfessor extends javax.swing.JFrame {
                 .addComponent(lblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addComponent(btnBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(panelTXT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -352,21 +342,36 @@ public class CadastrarProfessor extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        CadastrarProfessor pf = new CadastrarProfessor();
-        CONTROLLER.controllerProfessor.Casdrastra(new Professor(WIDTH,
-                txtNome.getText(),
-                txtCPF.getText(),
-                txtDataNascimento.getText(),
-                cbSEX.getSelectedItem().toString(),
-                txtCelular.getText(),
-                txtEmail.getText(),
-                txtNomeRua.getText(),
-                Integer.parseInt(txtNumRua.getText()),
-                cbMateria.getSelectedItem().toString(),
-                Double.parseDouble(txtSalario.getText()))); 
-        Home objNewProduct = new Home();
-        objNewProduct.setVisible(true);
-        this.dispose();
+        Check valid = new Check();
+        valid.ValidVoid(txtNome);
+        valid.ValidVoid(txtCPF);
+        valid.ValidVoid(txtCelular);
+        valid.ValidVoid(txtDataNascimento);
+        valid.ValidVoid(txtEmail);
+        valid.ValidVoid(txtNomeRua);
+        valid.ValidVoid(txtNumRua);
+        valid.ValidVoid(txtSalario);
+        valid.ValidCBO(cbMateria.getSelectedIndex());
+
+        if (valid.temErro()) {
+         JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        } else {
+
+            CONTROLLER.controllerProfessor.Casdrastra(new Professor(controllerProfessor.LastID(),
+                    txtNome.getText(),
+                    txtCPF.getText(),
+                    txtDataNascimento.getText(),
+                    cbSEX.getSelectedItem().toString(),
+                    txtCelular.getText(),
+                    txtEmail.getText(),
+                    txtNomeRua.getText(),
+                    Integer.parseInt(txtNumRua.getText()),
+                    cbMateria.getSelectedItem().toString(),
+                    Double.parseDouble(txtSalario.getText())));
+            Home objNewProduct = new Home();
+            objNewProduct.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -374,10 +379,6 @@ public class CadastrarProfessor extends javax.swing.JFrame {
         objNewProduct.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void btnBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBotaoActionPerformed
-      
-    }//GEN-LAST:event_btnBotaoActionPerformed
 
     private void cbSEXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSEXActionPerformed
 
@@ -486,7 +487,6 @@ public class CadastrarProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBotao;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbMateria;

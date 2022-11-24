@@ -6,6 +6,8 @@ package VIEW;
 
 import CONTROLLER.controllerAluno;
 import MODEL.Aluno;
+import javax.swing.JOptionPane;
+import utils.Check;
 
 /**
  *
@@ -50,7 +52,6 @@ public class CadastrarAluno extends javax.swing.JFrame {
         lblEmail = new javax.swing.JLabel();
         lblEndereco = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
-        btnBotao = new javax.swing.JButton();
         lblMateria = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,8 +70,11 @@ public class CadastrarAluno extends javax.swing.JFrame {
         panelTXT.setBackground(new java.awt.Color(255, 255, 255));
 
         txtNome.setBackground(new java.awt.Color(255, 255, 255));
+        txtNome.setToolTipText("");
+        txtNome.setName("Nome"); // NOI18N
 
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmail.setName("Email"); // NOI18N
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -78,12 +82,14 @@ public class CadastrarAluno extends javax.swing.JFrame {
         });
 
         txtNomeRua.setBackground(new java.awt.Color(255, 255, 255));
+        txtNomeRua.setName("Endereco"); // NOI18N
 
         txtNumRua.setBackground(new java.awt.Color(255, 255, 255));
+        txtNumRua.setName("Numero da casa"); // NOI18N
 
         cbMateria.setBackground(new java.awt.Color(255, 255, 255));
         cbMateria.setForeground(new java.awt.Color(0, 102, 102));
-        cbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Português", "Matematica", "Historia", "Geografia", "Ciencias", "Inglês", "Artes", "ED. Fisica" }));
+        cbMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Português", "Matematica", "Historia", "Geografia", "Ciencias", "Inglês", "Artes", "ED. Fisica" }));
 
         btnCancelar.setBackground(new java.awt.Color(0, 102, 102));
         btnCancelar.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,6 +117,7 @@ public class CadastrarAluno extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCPF.setName("CPF"); // NOI18N
 
         txtDataNascimento.setBackground(new java.awt.Color(255, 255, 255));
         try {
@@ -118,6 +125,7 @@ public class CadastrarAluno extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtDataNascimento.setName("Nascimento"); // NOI18N
 
         txtCelular.setBackground(new java.awt.Color(255, 255, 255));
         try {
@@ -125,6 +133,7 @@ public class CadastrarAluno extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtCelular.setName("Celular"); // NOI18N
 
         cbSEX.setBackground(new java.awt.Color(255, 255, 255));
         cbSEX.setForeground(new java.awt.Color(0, 102, 102));
@@ -170,13 +179,13 @@ public class CadastrarAluno extends javax.swing.JFrame {
                     .addComponent(cbSEX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNomeRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                 .addGroup(panelTXTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -203,22 +212,17 @@ public class CadastrarAluno extends javax.swing.JFrame {
         lblEmail.setBackground(new java.awt.Color(255, 255, 255));
         lblEmail.setForeground(new java.awt.Color(255, 255, 255));
         lblEmail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblEmail.setText("E-mail: ");
+        lblEmail.setText("E-mail:  ");
 
         lblEndereco.setBackground(new java.awt.Color(255, 255, 255));
         lblEndereco.setForeground(new java.awt.Color(255, 255, 255));
         lblEndereco.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblEndereco.setText("Endereço: ");
+        lblEndereco.setText("Endereço: / N ");
 
         lblNome.setBackground(new java.awt.Color(255, 255, 255));
         lblNome.setForeground(new java.awt.Color(255, 255, 255));
         lblNome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblNome.setText("Nome:");
-
-        btnBotao.setBackground(new java.awt.Color(0, 102, 102));
-        btnBotao.setForeground(new java.awt.Color(255, 255, 255));
-        btnBotao.setText("Botão");
-        btnBotao.setBorder(null);
 
         lblMateria.setBackground(new java.awt.Color(255, 255, 255));
         lblMateria.setForeground(new java.awt.Color(255, 255, 255));
@@ -232,7 +236,6 @@ public class CadastrarAluno extends javax.swing.JFrame {
             .addGroup(panelLBLLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLBLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblAluno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblCPF, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -263,9 +266,7 @@ public class CadastrarAluno extends javax.swing.JFrame {
                 .addComponent(lblEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                .addComponent(btnBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(panelTXT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -308,24 +309,36 @@ public class CadastrarAluno extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        
-        CadastrarProfessor pf = new CadastrarProfessor();
-        CONTROLLER.controllerAluno.Casdrastra(new Aluno(
-                controllerAluno.LastID(),
-                0,
-                txtNome.getText(),
-                txtCPF.getText(),
-                txtDataNascimento.getText(),
-                cbSEX.getSelectedItem().toString(),
-                txtCelular.getText(),
-                txtEmail.getText(),
-                txtNomeRua.getText(),
-                Integer.parseInt(txtNumRua.getText()),
-                cbMateria.getSelectedItem().toString()
-                )); 
-        Home objNewProduct = new Home();
-        objNewProduct.setVisible(true);
-        this.dispose();
+       Check valid = new Check();
+       valid.ValidVoid(txtNome);
+       valid.ValidVoid(txtCPF);
+       valid.ValidVoid(txtCelular);
+       valid.ValidVoid(txtDataNascimento);
+       valid.ValidVoid(txtEmail);
+       valid.ValidVoid(txtNomeRua);
+       valid.ValidVoid(txtNumRua);
+       valid.ValidCBO(cbMateria.getSelectedIndex());
+        if (valid.temErro()){
+           JOptionPane.showMessageDialog(this, valid.getMsgErro(),"Aviso!",JOptionPane.ERROR_MESSAGE);
+        } else {
+            CONTROLLER.controllerAluno.Casdrastra(new Aluno(
+                    controllerAluno.LastID(),
+                    0,
+                    txtNome.getText(),
+                    txtCPF.getText(),
+                    txtDataNascimento.getText(),
+                    cbSEX.getSelectedItem().toString(),
+                    txtCelular.getText(),
+                    txtEmail.getText(),
+                    txtNomeRua.getText(),
+                    Integer.parseInt(txtNumRua.getText()),
+                    cbMateria.getSelectedItem().toString()
+            ));
+            Home objNewProduct = new Home();
+            objNewProduct.setVisible(true);
+            this.dispose();
+
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -401,7 +414,6 @@ public class CadastrarAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBotao;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbMateria;

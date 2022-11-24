@@ -11,31 +11,20 @@ import java.util.Date;
  * @author rrmat
  */
 public class Professor extends Pessoa implements Comparable<Professor>{
-    private long IDP;
     private double Salario;
 
     public Professor() {
     }
 
-    public Professor(long IDP, String nome, String CPF, String nacimento, String Sex, String Celular, String email, String Endereco, int NumCasa, String Diciplina,double Salario) {
-        super(nome, CPF, nacimento, Sex, Celular, email, Endereco, NumCasa, Diciplina);
-        this.IDP = IDP;
+    public Professor(int id, String nome, String CPF, String nacimento, String Sex, String Celular, String email, String Endereco, int NumCasa, String Diciplina,double Salario) {
+        super(id, nome, CPF, nacimento, Sex, Celular, email, Endereco, NumCasa, Diciplina);
         this.Salario = Salario;
     }
 
+   
     public Professor(long IDP, double Salario) {
-        this.IDP = IDP;
         this.Salario = Salario;
     }
-
-    public long getIDP() {
-        return IDP;
-    }
-
-    public void setIDP(long IDP) {
-        this.IDP = IDP;
-    }
-
     public double getSalario() {
         return Salario;
     }
@@ -46,10 +35,8 @@ public class Professor extends Pessoa implements Comparable<Professor>{
     
     
 
-    @Override
-    public String toString() {
-        return IDP +";"+super.toString()+";"+Salario;
-    }
+    
+
 
     @Override
     public int compareTo(Professor professor) {

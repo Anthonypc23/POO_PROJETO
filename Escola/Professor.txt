@@ -1,6 +1,0 @@
-1;Anthony;386420518;02/06/2002;Masculino;933689584;Anthony.richard2314@gmail.com;rua da paz 73;73;Matematica;5866.1759999999995
-2;Carlos;386420518;02/06/2002;Masculino;933689584;Anthony.richard2314@gmail.com;rua da paz 73;73;Matematica;5866.1759999999995
-3;Maria;386420518;02/06/2002;Masculino;933689584;Anthony.richard2314@gmail.com;rua da paz 73;73;Matematica;4888.48
-1;ANfe2ono;191.151.621-56;49/15/6599;Masculino ;(36)26216-2156;wwdvdewdlmk ;61562612662162;62621621;Geografia;6.126162162162E12
-1;eofkwrko´fp1;622.616.226-15;61/65/2651;Outro;(26)06216-2116;dewdvwfevd;vdwfdvwdfevedwefv;261162162;Português;1.44
-1;Bruno;191.922.959-59;19/19/1929;Feminino;(11)99929-2929;acneovnomo;Rua magnorio da Silva;191992;Matematica;120.0

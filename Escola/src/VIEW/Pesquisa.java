@@ -307,7 +307,7 @@ public class Pesquisa extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Selecione um tipo de pesquisa", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
     } else {
-                JOptionPane.showMessageDialog(this, "Voçê não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Você não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
             } 
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -326,7 +326,7 @@ public class Pesquisa extends javax.swing.JFrame {
                 }
 
             } else {
-                JOptionPane.showMessageDialog(this, "Voçê não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Você não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
             }
         } else if (cbPessoa.getSelectedItem().toString().equals("Aluno")) {
             int index = -1;
@@ -342,7 +342,7 @@ public class Pesquisa extends javax.swing.JFrame {
                 }
 
             } else {
-                JOptionPane.showMessageDialog(this, "Voçê não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Você não selecionou uma linha", "Alerta", JOptionPane.WARNING_MESSAGE);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Selecione um tipo de pesquisa", "ERRO", JOptionPane.ERROR_MESSAGE);

@@ -12,6 +12,7 @@ import java.util.Date;
  * @author rrmat
  */
 public class Pessoa {
+    protected int id;
     protected String nome;
     protected String CPF;
     protected String nacimento;
@@ -22,7 +23,8 @@ public class Pessoa {
     protected int NumCasa;
     protected String Diciplina;
 
-    public Pessoa(String nome, String CPF, String nacimento, String Sex, String Celular, String email, String Endereco, int NumCasa, String Diciplina) {
+    public Pessoa(int id, String nome, String CPF, String nacimento, String Sex, String Celular, String email, String Endereco, int NumCasa, String Diciplina) {
+        this.id = id;
         this.nome = nome;
         this.CPF = CPF;
         this.nacimento = nacimento;
@@ -33,6 +35,8 @@ public class Pessoa {
         this.NumCasa = NumCasa;
         this.Diciplina = Diciplina;
     }
+
+    
 
     public Pessoa() {
     }
@@ -107,6 +111,14 @@ public class Pessoa {
 
     public void setDiciplina(String Diciplina) {
         this.Diciplina = Diciplina;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

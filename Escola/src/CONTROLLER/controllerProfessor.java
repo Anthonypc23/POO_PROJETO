@@ -66,7 +66,7 @@ public class controllerProfessor implements Escola{
             while (line != null) {
                 Professor p = new Professor();
                 String[] v = line.split(";");
-                p.setIDP(Integer.parseInt(v[0]));
+                p.setId(Integer.parseInt(v[0]));
                 p.setNome(v[1]);
                 p.setCPF(v[2]);
                 p.setNacimento(v[3]);
@@ -125,7 +125,7 @@ public class controllerProfessor implements Escola{
         List<String[]> lista = new ArrayList<>();
         pList = Read();
         for (Professor prof : pList) {
-            lista.add(new String[]{String.valueOf(prof.getIDP()), prof.getNome(), prof.getCPF(), prof.getNacimento(), prof.getSex(), prof.getCelular(), prof.getEmail(), prof.getEndereco(), String.valueOf(prof.getNumCasa()), prof.getDiciplina(), String.valueOf(prof.getSalario())});
+            lista.add(new String[]{String.valueOf(prof.getId()), prof.getNome(), prof.getCPF(), prof.getNacimento(), prof.getSex(), prof.getCelular(), prof.getEmail(), prof.getEndereco(), String.valueOf(prof.getNumCasa()), prof.getDiciplina(), String.valueOf(prof.getSalario())});
         }
         return lista;
     }
@@ -141,7 +141,7 @@ public class controllerProfessor implements Escola{
         Collections.sort(pList);
         List<String[]> lista = new ArrayList<>();
         for (Professor prof : pList) {
-            lista.add(new String[]{String.valueOf(prof.getIDP()), prof.getNome(), prof.getCPF(), prof.getNacimento(), prof.getSex(), prof.getCelular(), prof.getEmail(), prof.getEndereco(), String.valueOf(prof.getNumCasa()), prof.getDiciplina(), String.valueOf(prof.getSalario())});
+            lista.add(new String[]{String.valueOf(prof.getId()), prof.getNome(), prof.getCPF(), prof.getNacimento(), prof.getSex(), prof.getCelular(), prof.getEmail(), prof.getEndereco(), String.valueOf(prof.getNumCasa()), prof.getDiciplina(), String.valueOf(prof.getSalario())});
         }
         return lista;
     }

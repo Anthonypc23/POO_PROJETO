@@ -4,10 +4,12 @@ Projeto de programção orientada a objetos implementando todos os conceitos da 
 * JAVA
 * XLS
 * JAva Swing
+## Desing Patterns
+MVC
+
 # Contexto
 Um sistema simplificado de Escola que realiza o cadrastro e busca as informações cadastradas e podendo alterar apenas informações expecificas
-##### Desing Patterns
-MVC
+
 
 # Views
 #### View Home

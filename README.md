@@ -36,5 +36,6 @@ Segue abaixo as infomações cadastradas e, a ultima colulna da tabela que antes
 ## Resultado de ações da tela
 Abaixo veremos o resultado de ordenção das informção 
 ![ordena 2](https://user-images.githubusercontent.com/65256753/209881294-6b3c4099-5ac7-4e4c-9ee9-4c8c80d83a54.png)
+
 Logo Abaixo foi realiazado uma remoção e um aumento, este aumento é baseado em 20% a mais do total atual como segue na linha de "astolfo"
 ![Dar aumento](https://user-images.githubusercontent.com/65256753/209881292-3083abfc-5261-46e6-afe3-17fb13de3219.png)

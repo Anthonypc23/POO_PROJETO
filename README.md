@@ -9,6 +9,9 @@ Um sistema simplificado de Escola que realiza o cadrastro e busca as informaçõ
 ##### Desing Patterns
 MVC
 
-#Views
+# Views
+#### View Home
+![Captura de tela 2022-11-24 154559](https://user-images.githubusercontent.com/65256753/209877301-2c0d6225-25e3-43d2-8007-45855f685332.png)
+
 
 

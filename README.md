@@ -2,7 +2,7 @@
 Projeto de programção orientada a objetos implementando todos os conceitos da diciplina 
 # Recursos
 * JAVA
-* XLS
+* CSV
 * JAva Swing
 ### Desing Patterns
 * MVC

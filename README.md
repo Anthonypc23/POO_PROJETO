@@ -33,8 +33,8 @@ Segue abaixo as infomações cadastradas e, a ultima colulna da tabela que antes
 ![pesquisa teste 1](https://user-images.githubusercontent.com/65256753/209880044-6c819ab0-25fb-4fe7-b033-ea2273802fbb.png)
 
 
-# EM edição
-![Dar aumento](https://user-images.githubusercontent.com/65256753/209881292-3083abfc-5261-46e6-afe3-17fb13de3219.png)
-![Odernar 1](https://user-images.githubusercontent.com/65256753/209881293-45144eba-7161-4d71-9d7a-0064312a6dde.png)
+## Resultado de ações da tela
+Abaixo veremos o resultado de ordenção das informção 
 ![ordena 2](https://user-images.githubusercontent.com/65256753/209881294-6b3c4099-5ac7-4e4c-9ee9-4c8c80d83a54.png)
-![Remover tela](https://user-images.githubusercontent.com/65256753/209881295-d8bbfcee-b479-46fc-87b1-76037044ebaf.png)
+Logo Abaixo foi realiazado uma remoção e um aumento, este aumento é baseado em 20% a mais do total atual como segue na linha de "astolfo"
+![Dar aumento](https://user-images.githubusercontent.com/65256753/209881292-3083abfc-5261-46e6-afe3-17fb13de3219.png)

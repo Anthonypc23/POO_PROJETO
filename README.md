@@ -23,6 +23,16 @@ Mas a professor contem um a mais sendo o campo salario
 ![Cadastro 1](https://user-images.githubusercontent.com/65256753/209878577-4aa073f3-74ca-484b-94de-5484b0e84988.png)
 
 # View Pesquisa
-Este primeiro exemplo demonstra a tela vazia e sem imforção ja outra contem 
+Este primeiro exemplo demonstra a tela vazia e sem imformação,  perceba que a um campo de combo box de seleção este campo define qual lista sera buscada e qual tipo de informção sera manipula
++ Professor : salario
++ Aluno : nota
 ![Pesquisa 0](https://user-images.githubusercontent.com/65256753/209880038-c45de465-ff38-4faa-acc1-5f12e392eb52.png)
+segue abaixo as infomações cadastradas e a ultima colulna da tabela que antes era vazia agora retorna preenchia como "Salario" por selecionar professor
 ![pesquisa teste 1](https://user-images.githubusercontent.com/65256753/209880044-6c819ab0-25fb-4fe7-b033-ea2273802fbb.png)
+
+
+# EM edição
+![Dar aumento](https://user-images.githubusercontent.com/65256753/209881292-3083abfc-5261-46e6-afe3-17fb13de3219.png)
+![Odernar 1](https://user-images.githubusercontent.com/65256753/209881293-45144eba-7161-4d71-9d7a-0064312a6dde.png)
+![ordena 2](https://user-images.githubusercontent.com/65256753/209881294-6b3c4099-5ac7-4e4c-9ee9-4c8c80d83a54.png)
+![Remover tela](https://user-images.githubusercontent.com/65256753/209881295-d8bbfcee-b479-46fc-87b1-76037044ebaf.png)

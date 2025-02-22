@@ -23,21 +23,21 @@ Mas a professor contem um a mais sendo o campo salario.
 ![Cadastro 1](https://user-images.githubusercontent.com/65256753/209878577-4aa073f3-74ca-484b-94de-5484b0e84988.png)
 
 # View Pesquisa
-Este primeiro exemplo demonstra a tela vazia e sem imformação,  perceba que a um campo de combo box de seleção este campo define qual lista sera buscada e qual tipo de informção sera manipula.
+Este primeiro exemplo demonstra a tela vazia e sem informação,  perceba que a um campo de combo box de seleção, este campo define qual lista sera buscada e qual tipo de informação sera manipulada.
 + Professor : salario
 + Aluno : nota
 
 ![Pesquisa 0](https://user-images.githubusercontent.com/65256753/209880038-c45de465-ff38-4faa-acc1-5f12e392eb52.png)
 
-Segue abaixo as infomações cadastradas e, a ultima colulna da tabela que antes, era vazia agora retorna preenchiada como "Salario" por selecionar professor no combo box.
+Segue abaixo as infomações cadastradas e, a ultima coluna da tabela que antes, era vazia agora retorna preenchiada como "Salario" por selecionar professor no combo box.
 ![pesquisa teste 1](https://user-images.githubusercontent.com/65256753/209880044-6c819ab0-25fb-4fe7-b033-ea2273802fbb.png)
 
 
 ## Resultado de ações da tela
-Abaixo veremos o resultado de ordenção das informção 
+Abaixo veremos o resultado de ordenção das informação 
 
 ![ordena 2](https://user-images.githubusercontent.com/65256753/209881294-6b3c4099-5ac7-4e4c-9ee9-4c8c80d83a54.png)
 
-Logo Abaixo foi realiazado uma remoção e um aumento, este aumento é baseado em 20% a mais do total atual como segue na linha de "astolfo"
+Logo Abaixo foi realizado uma remoção e um aumento, este aumento é baseado em 20% a mais do total atual como segue na linha de "astolfo"
 
 ![Dar aumento](https://user-images.githubusercontent.com/65256753/209881292-3083abfc-5261-46e6-afe3-17fb13de3219.png)
